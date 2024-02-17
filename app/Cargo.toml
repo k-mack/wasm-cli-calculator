@@ -1,0 +1,16 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wit-bindgen = { version = "0.18.0", default-features = false, features = ["realloc"] }
+
+[package.metadata.component]
+package = "docs:calculator"
+
+[package.metadata.component.target]
+path = "../wit/calculator.wit"
+world = "app"
+
+[package.metadata.component.dependencies]

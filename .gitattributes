@@ -1,0 +1,7 @@
+# Auto detect text files and perform normalization
+*           text=Auto
+
+*.rs        text diff=rust
+*.sh        text eol=lf
+*.toml      text diff=toml
+Cargo.lock  text
