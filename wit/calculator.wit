@@ -4,17 +4,17 @@ package docs:calculator@0.1.0;
 interface calculate {
     // Operations supported by the calculator.
     enum op {
-        add,
+        add, subtract
     }
 
     // Evaluates an expression that applies an operation with two integers.
-    eval-expression: func(op: op, x: u32, y: u32) -> u32;
+    eval-expression: func(op: op, x: s32, y: s32) -> s32;
 }
 
 // Describes the contract to add two integers.
 interface add {
     // Returns the sum of two integers as an integer.
-    add: func(a: u32, b: u32) -> u32;
+    add: func(a: s32, b: s32) -> s32;
 }
 
 // Defines the component that provides the addition operation.
@@ -22,11 +22,23 @@ world adder {
     export add;
 }
 
+// Describes the contract to subtract two integers.
+interface subtract {
+    // Subtracts integer `b` from integer `a`.
+    subtract: func(a: s32, b: s32) -> s32;
+}
+
+// Defines the component that provides the subtraction operation.
+world subtractor {
+    export subtract;
+}
+
 // Defines the component that depends on an external party (component or Wasm
 // host) to provide the implementation of the addition operation and provides a
 // calculator implementation.
 world calculator {
     import add;
+    import subtract;
     export calculate;
 }
 

@@ -8,12 +8,13 @@ fn main() {
     let _ = args.next(); // ignore first arg as it is the program name
 
     // TODO: handle erroneous inputs
-    let x = args.next().unwrap().parse::<u32>().unwrap();
-    let y = args.next().unwrap().parse::<u32>().unwrap();
+    let x = args.next().unwrap().parse::<i32>().unwrap();
+    let y = args.next().unwrap().parse::<i32>().unwrap();
     let op = args.next().unwrap();
 
     let result = match op.as_str() {
         "add" => Some((eval_expression(Op::Add, x, y), "+")),
+        "subtract" => Some((eval_expression(Op::Subtract, x, y), "-")),
         _ => None,
     };
 
