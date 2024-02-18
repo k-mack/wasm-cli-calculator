@@ -5,7 +5,7 @@ use crate::bindings::exports::calc::basic::subtract::Guest;
 struct Component;
 
 impl Guest for Component {
-    fn subtract(a: i32, b: i32) -> i32 {
+    fn subtract(a: f64, b: f64) -> f64 {
         a - b
     }
 }

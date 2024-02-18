@@ -8,8 +8,8 @@ fn main() {
     let _ = args.next(); // ignore first arg as it is the program name
 
     // TODO: handle erroneous inputs
-    let x = args.next().unwrap().parse::<i32>().unwrap();
-    let y = args.next().unwrap().parse::<i32>().unwrap();
+    let x = args.next().unwrap().parse::<f64>().unwrap();
+    let y = args.next().unwrap().parse::<f64>().unwrap();
     let op = args.next().unwrap();
 
     let result = match op.as_str() {

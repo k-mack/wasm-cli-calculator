@@ -1,7 +1,7 @@
 package calc:basic@0.1.0;
 
 interface types {
-    type numeric = s32;
+    type numeric = float64;
 }
 
 // Describes the contract of a calculator.
