@@ -6,6 +6,9 @@ edition = "2021"
 [dependencies]
 wit-bindgen = { version = "0.18.0", default-features = false, features = ["realloc"] }
 
+[profile.release]
+lto = true
+
 [package.metadata.component]
 package = "docs:calculator"
 

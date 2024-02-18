@@ -9,6 +9,9 @@ wit-bindgen = { version = "0.18.0", default-features = false, features = ["reall
 [lib]
 crate-type = ["cdylib"]
 
+[profile.release]
+lto = true
+
 [package.metadata.component]
 package = "docs:subtractor"
 
