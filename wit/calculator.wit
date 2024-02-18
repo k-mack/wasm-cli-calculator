@@ -1,20 +1,28 @@
 package calc:basic@0.1.0;
 
+interface types {
+    type numeric = s32;
+}
+
 // Describes the contract of a calculator.
 interface calculate {
+    use types.{numeric};
+
     // Operations supported by the calculator.
     enum op {
         add, subtract
     }
 
     // Evaluates an expression that applies an operation with two integers.
-    eval-expression: func(op: op, x: s32, y: s32) -> s32;
+    eval-expression: func(op: op, x: numeric, y: numeric) -> numeric;
 }
 
 // Describes the contract to add two integers.
 interface add {
+    use types.{numeric};
+
     // Returns the sum of two integers as an integer.
-    add: func(a: s32, b: s32) -> s32;
+    add: func(a: numeric, b: numeric) -> numeric;
 }
 
 // Defines the component that provides the addition operation.
@@ -24,8 +32,10 @@ world adder {
 
 // Describes the contract to subtract two integers.
 interface subtract {
+    use types.{numeric};
+
     // Subtracts integer `b` from integer `a`.
-    subtract: func(a: s32, b: s32) -> s32;
+    subtract: func(a: numeric, b: numeric) -> numeric;
 }
 
 // Defines the component that provides the subtraction operation.
