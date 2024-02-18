@@ -10,7 +10,7 @@ wit-bindgen = { version = "0.18.0", default-features = false, features = ["reall
 lto = true
 
 [package.metadata.component]
-package = "docs:calculator"
+package = "calc:basic"
 
 [package.metadata.component.target]
 path = "../wit/calculator.wit"

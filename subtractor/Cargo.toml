@@ -13,7 +13,7 @@ crate-type = ["cdylib"]
 lto = true
 
 [package.metadata.component]
-package = "docs:subtractor"
+package = "calc:basic"
 
 [package.metadata.component.target]
 path = "../wit/calculator.wit"

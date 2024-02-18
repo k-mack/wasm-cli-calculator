@@ -1,6 +1,6 @@
 mod bindings;
 
-use crate::bindings::exports::docs::calculator::subtract::Guest;
+use crate::bindings::exports::calc::basic::subtract::Guest;
 
 struct Component;
 

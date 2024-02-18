@@ -1,4 +1,4 @@
-package docs:calculator@0.1.0;
+package calc:basic@0.1.0;
 
 // Describes the contract of a calculator.
 interface calculate {

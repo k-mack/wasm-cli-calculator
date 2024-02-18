@@ -1,6 +1,6 @@
 mod bindings;
 
-use crate::bindings::docs::calculator::calculate::{eval_expression, Op};
+use crate::bindings::calc::basic::calculate::{eval_expression, Op};
 
 fn main() {
     let mut args = std::env::args();
