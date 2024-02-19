@@ -1,10 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Build components
-cd adder && cargo component build --release && cd -
-cd subtractor && cargo component build --release && cd -
-cd calculator && cargo component build --release && cd -
-cd app && cargo component build --release && cd -
+for dir in adder/ substractor/ calculator/ wasi-cli-command/; do
+    cd $dir && cargo component build --release && cd -
+done
 
 # Compose components
 wasm-tools compose \
@@ -12,4 +11,8 @@ wasm-tools compose \
     -d subtractor/target/wasm32-wasi/release/subtractor.wasm \
     -o calculator-composed.wasm \
     calculator/target/wasm32-wasi/release/calculator.wasm
-wasm-tools compose -d calculator-composed.wasm -o app-composed.wasm app/target/wasm32-wasi/release/app.wasm
+
+wasm-tools compose \
+    -d calculator-composed.wasm \
+    -o wasi-cli-app.wasm \
+    wasi-cli-command/target/wasm32-wasi/release/wasi-cli-command.wasm
