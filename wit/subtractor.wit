@@ -1,0 +1,15 @@
+// Package declaration not necessary as it is defined in another file in this directory.
+
+// Defines the unit of functionality that subtracts two numerics.
+interface subtract {
+    use types.{numeric};
+
+    // Subtracts integer `b` from integer `a`.
+    subtract: func(a: numeric, b: numeric) -> numeric;
+}
+
+// Describes the concrete component to subtract two numerics.
+// It provides (i.e., exports) the functionality to subtract two numerics.
+world subtractor {
+    export subtract;
+}

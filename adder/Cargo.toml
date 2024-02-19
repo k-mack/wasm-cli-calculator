@@ -16,7 +16,7 @@ lto = true
 package = "calc:basic"
 
 [package.metadata.component.target]
-path = "../wit/calculator.wit"
+path = "../wit"
 world = "adder"
 
 [package.metadata.component.dependencies]

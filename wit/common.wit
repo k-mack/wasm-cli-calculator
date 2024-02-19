@@ -1,0 +1,7 @@
+// Package declaration not necessary as it is defined in another file in this directory.
+
+// Defines common types used in the calculator package.
+interface types {
+    // The type of numeric the calculator can use in its operations.
+    type numeric = float64;
+}
