@@ -16,3 +16,6 @@ wasm-tools compose \
     -d calculator-composed.wasm \
     -o wasi-cli-app.wasm \
     wasi-cli-command/target/wasm32-wasi/release/wasi-cli-command.wasm
+
+# Build the native CLI application that has wasmtime embedded into it
+cd cli-app && cargo build --release && cd -
